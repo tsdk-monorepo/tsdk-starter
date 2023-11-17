@@ -1,10 +1,11 @@
-This is a example repo for tsdk quick start tutorial.
+This is the repo for tsdk quick start tutorial.
 
-> Recommend use `pnpm`
 
 ## Getting Started
 
 First, install dependencies:
+
+> Recommend use `pnpm`
 
 ```sh
 pnpm install
