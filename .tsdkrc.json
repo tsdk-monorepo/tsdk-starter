@@ -1,0 +1,13 @@
+{
+  "packageDir": "packages/",
+  "packageName": "fe-sdk",
+  "baseDir": "./src",
+  "entityLibName": ["typeorm"],
+  "entityExt": "entity",
+  "apiconfExt": "apiconf",
+  "shareExt": "shared",
+  "sharedDirs": ["./src/shared"],
+  "sdkWhiteList": [""],
+  "monorepoRoot": "./",
+  "axiosVersion": "1.6.1"
+}
