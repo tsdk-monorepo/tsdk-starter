@@ -1,11 +1,12 @@
 import http from "http";
-import express from "express";
+import express, { Request } from "express";
+import compression from 'compression';
 import { Server } from "socket.io";
 import { socketIOAdapterFactory } from "tsdk-server-adapters/lib/socket.io-adapter";
 import { expressAdapterFactory } from "tsdk-server-adapters/lib/express-adapter";
 import { checkMethodHasBody, ProtocolTypes } from "@/src/shared/tsdk-helper";
 import { RequestInfo, routeBus } from "./gen-route";
-import { setupHelloAPI } from './Hello.api';
+import { setupHelloAPI } from "./Hello.api";
 
 const port = 3030;
 
@@ -40,7 +41,7 @@ io.on("connection", (socket) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(compression());
 app.get("/", (req, res) => {
   res.end("hi, from express.");
 });
@@ -48,7 +49,7 @@ app.use(
   "/api/:type",
   expressAdapterFactory<RequestInfo>({
     routeBus,
-    getReqInfo(req) {
+    getReqInfo(req: Request) {
       return {
         ip: req.ip as string,
         lang: "zh-CN",
@@ -59,7 +60,7 @@ app.use(
     getType(reqInfo) {
       return reqInfo.type;
     },
-    getData(req) {
+    async getData(req) {
       return checkMethodHasBody(req.method) ? req.body : req.query;
     },
   })

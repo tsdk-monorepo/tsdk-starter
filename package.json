@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sync-sdk": "pnpm tsdk --sync",
     "dev": "nest start --watch",
-    "build": "nest build"
+    "build": "nest build",
+    "checktype": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -17,13 +18,15 @@
     "socket.io": "^4.7.2",
     "tsdk-server-adapters": "0.0.20-beta.13",
     "zod": "^3.22.4",
-    "change-case": "^4.1.2"
+    "change-case": "^4.1.2",
+    "compression": "^1.7.4"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.9.0",
     "tsdk": "0.0.20-beta.13",
     "typescript": "^5.2.2",
-    "@nestjs/cli": "^10.2.1"
+    "@nestjs/cli": "^10.2.1",
+    "@types/compression": "^1.7.5"
   }
 }

@@ -1,12 +1,27 @@
 import { ZodError } from "zod";
-import {
-  genRouteFactory,
-  getRouteEventName,
-  ObjectLiteral,
-  Protocol,
-} from "tsdk-server-adapters";
+import { genRouteFactory, Protocol } from "tsdk-server-adapters";
 import { ProtocolTypes } from "@/src/shared/tsdk-helper";
 import { APIConfig, APITypesKey } from "@/src/shared/tsdk-types";
+
+const middlewares = [authMiddleware];
+const genRouteObj = genRouteFactory<APIConfig, RequestInfo>(
+  onErrorHandler,
+  ProtocolTypes,
+  middlewares,
+  APITypesKey
+);
+export const routeBus = genRouteObj.routeBus;
+export const genRoute = genRouteObj.genRoute;
+
+export interface RequestInfo {
+  type: string;
+  ip: string;
+  lang: string;
+  username?: string;
+  userId?: number;
+  token?: string;
+}
+export type ReadonlyRequestInfo = Readonly<RequestInfo>;
 
 async function authMiddleware(
   protocol: Protocol,
@@ -26,28 +41,9 @@ async function authMiddleware(
   return Promise.resolve();
 }
 
-const middlewares = [authMiddleware];
-
-export const genRouteObj = genRouteFactory<APIConfig, RequestInfo>(
-  onErrorHandler,
-  ProtocolTypes,
-  middlewares,
-  APITypesKey
-);
-
-export const routeBus = genRouteObj.routeBus;
-
-export const genRoute = genRouteObj.genRoute;
-
-export interface RequestInfo {
-  type: string;
-  ip: string;
-  lang: string;
-  username?: string;
-  userId?: number;
-  token?: string;
+class AuthError extends Error {
+  message = "AuthError";
 }
-export type ReadonlyRequestInfo = Readonly<RequestInfo>;
 
 class CustomError extends Error {
   statusCode: number;
@@ -78,8 +74,4 @@ function onErrorHandler(
     status = 401;
   }
   return send({ _id: msgId, status, result: { msg } });
-}
-
-class AuthError extends Error {
-  message = "AuthError";
 }
