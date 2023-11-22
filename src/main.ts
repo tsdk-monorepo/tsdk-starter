@@ -1,6 +1,6 @@
 import http from "http";
 import express, { Request } from "express";
-import compression from 'compression';
+import compression from "compression";
 import { Server } from "socket.io";
 import { socketIOAdapterFactory } from "tsdk-server-adapters/lib/socket.io-adapter";
 import { expressAdapterFactory } from "tsdk-server-adapters/lib/express-adapter";
@@ -49,7 +49,7 @@ app.use(
   "/api/:type",
   expressAdapterFactory<RequestInfo>({
     routeBus,
-    getReqInfo(req: Request) {
+    async getReqInfo(req: Request) {
       return {
         ip: req.ip as string,
         lang: "zh-CN",
@@ -60,7 +60,7 @@ app.use(
     getType(reqInfo) {
       return reqInfo.type;
     },
-    async getData(req) {
+    getData(req) {
       return checkMethodHasBody(req.method) ? req.body : req.query;
     },
   })
