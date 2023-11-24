@@ -10,20 +10,24 @@ import {
   GetHelloReq,
   GetHelloRes,
   UpdateHello,
+  UpdateHelloReq,
   UpdateHelloRes,
 } from "@/lib/user-api";
+import { AxiosRequestConfig } from "axios";
 
 export function useGetHello(
   payload: GetHelloReq,
   options?: UndefinedInitialDataOptions<GetHelloRes, Error>,
-  queryClient?: QueryClient
+  queryClient?: QueryClient,
+  requestConfig?: AxiosRequestConfig<GetHelloReq>,
+  needTrim?: boolean
 ) {
   return useQuery(
     {
       ...(options || {}),
       queryKey: [GetHello.config.path, payload],
       queryFn() {
-        return GetHello(payload);
+        return GetHello(payload, requestConfig, needTrim);
       },
     },
     queryClient
@@ -34,17 +38,19 @@ export function useUpdateHello(
   options?: UseMutationOptions<
     UpdateHelloRes,
     Error,
-    {
-      payload: string;
-    },
+    UpdateHelloReq,
     unknown
   >,
-  queryClient?: QueryClient
+  queryClient?: QueryClient,
+  requestConfig?: AxiosRequestConfig<UpdateHelloReq>,
+  needTrim?: boolean
 ) {
   return useMutation(
     {
       ...(options || {}),
-      mutationFn: UpdateHello,
+      mutationFn(payload) {
+        return UpdateHello(payload, requestConfig, needTrim);
+      },
     },
     queryClient
   );
