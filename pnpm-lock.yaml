@@ -21,8 +21,8 @@ importers:
         specifier: ^4.7.2
         version: 4.7.2
       tsdk-server-adapters:
-        specifier: 0.0.20-beta.13
-        version: 0.0.20-beta.13(express@4.18.2)(hono@3.10.1)(socket.io@4.7.2)(zod@3.22.4)
+        specifier: 0.0.20-beta.15
+        version: 0.0.20-beta.15(express@4.18.2)(hono@3.10.1)(socket.io@4.7.2)(zod@3.22.4)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -40,8 +40,8 @@ importers:
         specifier: ^20.9.0
         version: 20.9.0
       tsdk:
-        specifier: 0.0.20-beta.13
-        version: 0.0.20-beta.13
+        specifier: 0.0.20-beta.15
+        version: 0.0.20-beta.15
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -115,6 +115,9 @@ importers:
       socket.io-client:
         specifier: ^4.7.2
         version: 4.7.2
+      swr:
+        specifier: ^2.2.4
+        version: 2.2.4(react@18.2.0)
       zod:
         specifier: ^3
         version: 3.22.4
@@ -4503,8 +4506,8 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsdk-server-adapters@0.0.20-beta.13(express@4.18.2)(hono@3.10.1)(socket.io@4.7.2)(zod@3.22.4):
-    resolution: {integrity: sha512-FwjGWF1s3g2yMkKK4KQeaO66J6MZ+ZQ/euzTr1A4UJeR/2hgnuQK0oGEyZpMYnSUsfO6lIIBoW1kavkq6pmdjA==}
+  /tsdk-server-adapters@0.0.20-beta.15(express@4.18.2)(hono@3.10.1)(socket.io@4.7.2)(zod@3.22.4):
+    resolution: {integrity: sha512-MFRzx9V2auIfQ8flmEyiVypkYUwjr1ogOB/EGpYXB6AyRALWGn5Ryg7zuYdFQzrFOxbnetpGPPrxHvc9fAyqww==}
     peerDependencies:
       express: ^4.18.2
       hono: ^3.5.4
@@ -4526,8 +4529,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /tsdk@0.0.20-beta.13:
-    resolution: {integrity: sha512-Sy0dnSesnpMLuRMkocNKn/jpBLYqViJ+qDQuGsCP6HelH/DbrmPlnmdDZDqyLj3kFnNBXDcr8HtDh7tZaNf+Mw==}
+  /tsdk@0.0.20-beta.15:
+    resolution: {integrity: sha512-nXf7jrRODxsi4zZgjyvosJxJGyTjP0478RBBO4JLB2LSOW2wVw333owzeaGniKLJ4ExQZ7szNzjcokECtQnrrQ==}
     hasBin: true
     dependencies:
       chalk: 4.1.2

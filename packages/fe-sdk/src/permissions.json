@@ -6,7 +6,8 @@
       "path": "/get-hello",
       "description": "Get hello",
       "category": "hello",
-      "needAuth": false
+      "needAuth": false,
+      "name": "GetHello"
     },
     {
       "type": "user",
@@ -15,7 +16,8 @@
       "description": "Update hello",
       "category": "hello",
       "needAuth": false,
-      "schema": {}
+      "schema": {},
+      "name": "UpdateHello"
     }
   ]
 }
