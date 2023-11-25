@@ -2,9 +2,8 @@
 
 import { useGetHello, useUpdateHello } from "./hooks";
 
-
 export default function HelloPage() {
-  const { data, mutate } = useGetHello({});
+  const { data, mutate, } = useGetHello({});
   const { trigger } = useUpdateHello()
 
   return (

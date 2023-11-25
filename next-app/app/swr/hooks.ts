@@ -17,7 +17,7 @@ export function useGetHello(
   requestConfig?: AxiosRequestConfig<GetHelloReq>,
   needTrim?: boolean
 ) {
-  return useSWR(
+  return useSWR<GetHelloRes, Error>(
     { url: GetHello.config.path, arg: payload },
     ({ arg }) => {
       return GetHello(arg, requestConfig, needTrim);

@@ -23,10 +23,17 @@ Run the backend development server:
 pnpm dev
 ```
 
-And run the Next.js development server:
+Run the Next.js development server:
 
 ```sh
 pnpm --filter=next-app dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+Run expo (React Native):
+
+```
+pnpm --filter=expo-app dev
+```

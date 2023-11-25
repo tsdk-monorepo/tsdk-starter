@@ -18,5 +18,5 @@
     "incremental": true,
     "skipLibCheck": true,
   },
-  "exclude": ["./next-app"]
+  "exclude": ["./next-app", "./expo-app"]
 }
