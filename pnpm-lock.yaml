@@ -21,8 +21,8 @@ importers:
         specifier: ^4.7.2
         version: 4.7.2
       tsdk-server-adapters:
-        specifier: 0.0.20-beta.15
-        version: 0.0.20-beta.15(express@4.18.2)(hono@3.10.1)(socket.io@4.7.2)(zod@3.22.4)
+        specifier: 0.0.20
+        version: 0.0.20(express@4.18.2)(hono@3.10.3)(socket.io@4.7.2)(zod@3.22.4)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -40,8 +40,8 @@ importers:
         specifier: ^20.9.0
         version: 20.9.0
       tsdk:
-        specifier: 0.0.20-beta.15
-        version: 0.0.20-beta.15
+        specifier: 0.0.20
+        version: 0.0.20
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -5824,8 +5824,8 @@ packages:
       source-map: 0.7.4
     dev: false
 
-  /hono@3.10.1:
-    resolution: {integrity: sha512-4jPKCmYWLAoCMpmvOU+xNOQYdcNftip7sM/IsO8EPyGAtjk9fGNyUchG6huSzLrY449WDNGFPetVs5doepNnlA==}
+  /hono@3.10.3:
+    resolution: {integrity: sha512-44YzAp+rydwGWqW+VRivuOWpGWug8zCSy1Gd6gBLAlclIVlPjZAYXfSNqlhSIvd6ZyseM4aP9SDDNmwXceIy+A==}
     engines: {node: '>=16.0.0'}
     dev: false
 
@@ -9393,11 +9393,11 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsdk-server-adapters@0.0.20-beta.15(express@4.18.2)(hono@3.10.1)(socket.io@4.7.2)(zod@3.22.4):
-    resolution: {integrity: sha512-MFRzx9V2auIfQ8flmEyiVypkYUwjr1ogOB/EGpYXB6AyRALWGn5Ryg7zuYdFQzrFOxbnetpGPPrxHvc9fAyqww==}
+  /tsdk-server-adapters@0.0.20(express@4.18.2)(hono@3.10.3)(socket.io@4.7.2)(zod@3.22.4):
+    resolution: {integrity: sha512-/acZYzK/Of5gVs0lnADGYo9GpYJiedKEXxX10mRskS+mWlXNS3GqSMkiQXbGi9cJCPvitUgEoUXC2fFka0j+Zg==}
     peerDependencies:
       express: ^4.18.2
-      hono: ^3.5.4
+      hono: ^3.10.2
       socket.io: ^4.7.2
       ws: ^8.13.0
       zod: ^3
@@ -9411,13 +9411,13 @@ packages:
     dependencies:
       eventemitter3: 4.0.7
       express: 4.18.2
-      hono: 3.10.1
+      hono: 3.10.3
       socket.io: 4.7.2
       zod: 3.22.4
     dev: false
 
-  /tsdk@0.0.20-beta.15:
-    resolution: {integrity: sha512-nXf7jrRODxsi4zZgjyvosJxJGyTjP0478RBBO4JLB2LSOW2wVw333owzeaGniKLJ4ExQZ7szNzjcokECtQnrrQ==}
+  /tsdk@0.0.20:
+    resolution: {integrity: sha512-Rh3qG4mx24N9IQOK3aDram6T+TSuJlHjTWM4tQBAyRpawXukoYkadHkdGojD/YSX1hOIQJWXodqVE2MWrNHO+g==}
     hasBin: true
     dependencies:
       chalk: 4.1.2

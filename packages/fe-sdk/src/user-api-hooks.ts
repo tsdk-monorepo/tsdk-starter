@@ -9,12 +9,12 @@
     import {
         
           GetHelloConfig,
-          GetHelloReq,
-          GetHelloRes,
+          type GetHelloReq,
+          type GetHelloRes,
         
           UpdateHelloConfig,
-          UpdateHelloReq,
-          UpdateHelloRes,
+          type UpdateHelloReq,
+          type UpdateHelloRes,
         
       } from './apiconf-refs';
     import {

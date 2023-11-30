@@ -4,7 +4,7 @@ import { useGetHello, useUpdateHello } from "@/lib/user-api-hooks";
 
 
 export default function HelloPage() {
-  const { data, mutate } = useGetHello({});
+  const { data, mutate, error } = useGetHello({});
   const { trigger } = useUpdateHello()
 
   return (
