@@ -1,5 +1,5 @@
 {
-  "packageDir": "packages/",
+  "packageDir": "../",
   "packageName": "fe-sdk",
   "baseDir": "./src",
   "entityLibName": ["typeorm"],
@@ -8,7 +8,8 @@
   "shareExt": "shared",
   "sharedDirs": ["./src/shared"],
   "sdkWhiteList": [],
-  "monorepoRoot": "./",
+  "removeFields": [],
+  "monorepoRoot": "../",
   "dataHookLib": "SWR",
   "dependencies": {
     "axios": "1.6.2"

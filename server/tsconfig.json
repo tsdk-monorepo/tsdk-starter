@@ -16,7 +16,6 @@
       "@/*": ["./*"]
     },
     "incremental": true,
-    "skipLibCheck": true,
-  },
-  "exclude": ["./next-app", "./expo-app"]
+    "skipLibCheck": true
+  }
 }

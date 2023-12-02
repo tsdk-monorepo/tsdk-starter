@@ -1,6 +1,5 @@
 This is the repo for tsdk quick start tutorial.
 
-
 ## Getting Started
 
 First, install dependencies:
@@ -14,13 +13,13 @@ pnpm install
 Then, sync fe-sdk packakge files:
 
 ```sh
-pnpm tsdk --sync
+pnpm --filter=server sync-sdk
 ```
 
 Run the backend development server:
 
 ```sh
-pnpm dev
+pnpm --filter=server dev
 ```
 
 Run the Next.js development server:
@@ -31,9 +30,8 @@ pnpm --filter=next-app dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
 Run expo (React Native):
 
-```
-pnpm --filter=expo-app dev
+```sh
+pnpm --filter=expo-app start
 ```
