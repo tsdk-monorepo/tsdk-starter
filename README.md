@@ -7,7 +7,8 @@ First, install dependencies:
 > Recommend use `pnpm`
 
 ```sh
-pnpm install
+pnpm install 
+pnpm run ready
 ```
 
 Then, sync fe-sdk packakge files:

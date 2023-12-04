@@ -2,5 +2,7 @@
   "name": "tsdk-quickstart",
   "version": "1.0.0",
   "private": true,
-  "scripts": {}
+  "scripts": {
+    "ready": "pnpm --filter=server sync-sdk"
+  }
 }

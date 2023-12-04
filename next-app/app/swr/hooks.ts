@@ -29,15 +29,16 @@ export function useGetHello(
 export function useUpdateHello(
   options?: SWRMutationConfiguration<
     UpdateHelloRes,
-    { arg: UpdateHelloReq },
-    string
+    Error,
+    string,
+    UpdateHelloReq
   >,
   requestConfig?: AxiosRequestConfig<UpdateHelloReq>,
   needTrim?: boolean
 ) {
   return useSWRMutation(
     UpdateHello.config.path,
-    (url, { arg }: { arg: UpdateHelloReq }) => {
+    (url, { arg }) => {
       return UpdateHello(arg, requestConfig, needTrim);
     },
     options

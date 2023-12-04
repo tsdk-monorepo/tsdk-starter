@@ -49,8 +49,9 @@ return useSWR(
             export function useUpdateHello(
               options?: SWRMutationConfiguration<
                 UpdateHelloRes,
-                { arg: UpdateHelloReq },
-                string
+                Error,
+                string,
+                UpdateHelloReq
               >,
               requestConfig?: AxiosRequestConfig<UpdateHelloReq>,
               needTrim?: boolean
