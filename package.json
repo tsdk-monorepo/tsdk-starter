@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "ready": "pnpm --filter=server sync-sdk",
-    "prepare": "is-ci || husky install"
-  },
-  "dependencies": {
-    "is-ci": "^3.0.1"
+    "ready": "pnpm --filter=server sync-sdk"
   }
 }

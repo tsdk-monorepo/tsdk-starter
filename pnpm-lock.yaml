@@ -6,11 +6,7 @@ settings:
 
 importers:
 
-  .:
-    dependencies:
-      is-ci:
-        specifier: ^3.0.1
-        version: 3.0.1
+  .: {}
 
   expo-app:
     dependencies:
@@ -144,8 +140,8 @@ importers:
         specifier: ^4.7.2
         version: 4.7.2
       tsdk-server-adapters:
-        specifier: 0.0.26
-        version: 0.0.26(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4)
+        specifier: 0.0.27
+        version: 0.0.27(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -163,8 +159,8 @@ importers:
         specifier: ^20.9.0
         version: 20.9.0
       tsdk:
-        specifier: 0.0.26
-        version: 0.0.26
+        specifier: 0.0.27
+        version: 0.0.27
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -6074,13 +6070,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-ci@3.0.1:
-    resolution: {integrity: sha512-ZYvCgrefwqoQ6yTyYUbQu64HsITZ3NfKX1lzaEYdkTDcfKzzCI/wthRRYKkdjHKFVgNiXKAKm65Zo1pk2as/QQ==}
-    hasBin: true
-    dependencies:
-      ci-info: 3.9.0
-    dev: false
-
   /is-core-module@2.13.1:
     resolution: {integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==}
     dependencies:
@@ -8566,10 +8555,6 @@ packages:
   /safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
-  /safe-eval@0.4.1:
-    resolution: {integrity: sha512-wmiu4RSYVZ690RP1+cv/LxfPK1dIlEN35aW7iv4SMYdqDrHbkll4+NJcHmKm7PbCuI1df1otOcPwgcc2iFR85g==}
-    dev: true
-
   /safe-json-stringify@1.2.0:
     resolution: {integrity: sha512-gH8eh2nZudPQO6TytOvbxnuhYBOvDBBLW52tz5q6X58lJcd/tkmqFR+5Z9adS8aJtURSXWThWy/xJtJwixErvg==}
     requiresBuild: true
@@ -9401,15 +9386,18 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsdk-server-adapters@0.0.26(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4):
-    resolution: {integrity: sha512-Pzx8NM1rnBh/eT5o6XZfarYS9zNGgrRAi8hxe61AuNbVdjUsUa7uwNqPjzuITQ98corQJC7GlBbOHvmokaXY5g==}
+  /tsdk-server-adapters@0.0.27(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4):
+    resolution: {integrity: sha512-jMQj0WA8MqDcSsdT6VNasLX7XyUNYjyRexmgY+Ji08hv7plS1DhWvQXBcDXA2RSg8BrCnE4gd5L0+EUWxH5BBQ==}
     peerDependencies:
       express: ^4.18.2
+      fastify: ^4.24.3
       hono: ^3.10.2
       socket.io: ^4.7.2
       zod: ^3
     peerDependenciesMeta:
       express:
+        optional: true
+      fastify:
         optional: true
       hono:
         optional: true
@@ -9422,14 +9410,13 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /tsdk@0.0.26:
-    resolution: {integrity: sha512-7tY2TMiaYEOQz4mWsFqbfmmQgDbJ5kEeqoGXmMaLi2Qz05+92HfcZTEkqRmURaeDkn+Zo+WbjLQFdKXVaVkviA==}
+  /tsdk@0.0.27:
+    resolution: {integrity: sha512-pKLSZ3GtioUmDAMO4Kq1t2bUQ7Q5dAyDq5MLa69e6ilmiINvKcWlHOVuGIkUqwUaW4q4g9ZkKaBaF6rb2l1QBg==}
     hasBin: true
     dependencies:
       chalk: 4.1.2
       fast-glob: 3.3.2
       fs-extra: 11.2.0
-      safe-eval: 0.4.1
     dev: true
 
   /tslib@2.6.2:
