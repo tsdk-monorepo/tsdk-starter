@@ -140,8 +140,8 @@ importers:
         specifier: ^4.7.2
         version: 4.7.2
       tsdk-server-adapters:
-        specifier: 0.0.27
-        version: 0.0.27(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4)
+        specifier: 0.0.28
+        version: 0.0.28(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4)
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -159,8 +159,8 @@ importers:
         specifier: ^20.9.0
         version: 20.9.0
       tsdk:
-        specifier: 0.0.27
-        version: 0.0.27
+        specifier: 0.0.28
+        version: 0.0.28
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -9386,8 +9386,8 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsdk-server-adapters@0.0.27(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4):
-    resolution: {integrity: sha512-jMQj0WA8MqDcSsdT6VNasLX7XyUNYjyRexmgY+Ji08hv7plS1DhWvQXBcDXA2RSg8BrCnE4gd5L0+EUWxH5BBQ==}
+  /tsdk-server-adapters@0.0.28(express@4.18.2)(socket.io@4.7.2)(zod@3.22.4):
+    resolution: {integrity: sha512-2jOBinkUR9wR+giE/hoUZys2fLN+U7KWUBw9GzsOFC7mgOhWh10RsP5QDtdGnxjqz4vFf9PYw+3gzWdSkTe6sQ==}
     peerDependencies:
       express: ^4.18.2
       fastify: ^4.24.3
@@ -9410,8 +9410,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /tsdk@0.0.27:
-    resolution: {integrity: sha512-pKLSZ3GtioUmDAMO4Kq1t2bUQ7Q5dAyDq5MLa69e6ilmiINvKcWlHOVuGIkUqwUaW4q4g9ZkKaBaF6rb2l1QBg==}
+  /tsdk@0.0.28:
+    resolution: {integrity: sha512-TQHmJqTbX+Ld7+xW4ekwDlxur87mCWbBa8bEbhUqww0UPliOSuAHZoGxSXwYs3Crc1Or8MwLUpVy1Fl1McVP7g==}
     hasBin: true
     dependencies:
       chalk: 4.1.2
