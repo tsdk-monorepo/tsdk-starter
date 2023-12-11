@@ -8,12 +8,13 @@ export * from "fe-sdk/lib/shared-refs";
 
 const host = Constants.expoGoConfig?.debuggerHost?.split(":")?.[0];
 
-export const baseURL = host
-  ? "http://" +
-    host +
-    ":" +
-    (process.env.EXPO_PUBLIC_API_URL || "").split(":").pop()
-  : process.env.EXPO_PUBLIC_API_URL || "";
+export const baseURL =
+  host && (host.indexOf("localhost") > -1 || host.indexOf("127.0.0.1") > -1)
+    ? "http://" +
+      host +
+      ":" +
+      (process.env.EXPO_PUBLIC_API_URL || "").split(":").pop()
+    : process.env.EXPO_PUBLIC_API_URL || "";
 
 console.log("baseURL", baseURL);
 
