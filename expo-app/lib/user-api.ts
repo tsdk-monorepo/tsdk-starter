@@ -7,14 +7,16 @@ export * from "fe-sdk/lib/apiconf-refs";
 export * from "fe-sdk/lib/shared-refs";
 
 const host = Constants.expoGoConfig?.debuggerHost?.split(":")?.[0];
+const API_URL = process.env.EXPO_PUBLIC_API_URL || "";
 
 export const baseURL =
-  host && (host.indexOf("localhost") > -1 || host.indexOf("127.0.0.1") > -1)
-    ? "http://" +
-      host +
-      ":" +
-      (process.env.EXPO_PUBLIC_API_URL || "").split(":").pop()
-    : process.env.EXPO_PUBLIC_API_URL || "";
+  host &&
+  (host.startsWith("192.168") ||
+    host.startsWith("10.") ||
+    host.startsWith("172.")) &&
+  (API_URL.indexOf("localhost") > -1 || API_URL.indexOf("127.0.0.1") > -1)
+    ? "http://" + host + ":" + (API_URL.split(":").pop() || "")
+    : API_URL;
 
 console.log("baseURL", baseURL);
 
