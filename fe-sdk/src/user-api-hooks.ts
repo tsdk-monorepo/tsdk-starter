@@ -27,16 +27,21 @@
     
     
         
-        
+/** 
+ * Get hello
+ * 
+ * @category hello
+ */
 export function useGetHello(
-payload: GetHelloReq,
-options?: SWRConfiguration<GetHelloRes>,
+payload: GetHelloReq | undefined,
+options?: SWRConfiguration<GetHelloRes | undefined>,
 requestConfig?: AxiosRequestConfig<GetHelloReq>,
 needTrim?: boolean
 ) {
 return useSWR(
-  { url: GetHello.config.path, arg: payload },
+  () => ({ url: GetHello.config.path, arg: payload }),
   ({ arg }) => {
+    if (typeof arg === 'undefined') return undefined;
     return GetHello(arg, requestConfig, needTrim);
   },
   options
@@ -46,6 +51,11 @@ return useSWR(
         
         
         
+            /** 
+             * Update hello
+             * 
+             * @category hello
+             */
             export function useUpdateHello(
               options?: SWRMutationConfiguration<
                 UpdateHelloRes,
