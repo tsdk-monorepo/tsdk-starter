@@ -1,23 +1,21 @@
-import { z } from "zod";
+import * as z from 'zod';
 
 export const APITypes = {
-  admin: "admin",
-  user: "user",
-  common: "common",
+  user: 'user',
+  admin: 'admin',
+  common: 'common',
 } as const;
 
-export const APITypesKey = Object.keys(APITypes).filter(
-  (item) => item !== APITypes.common
-);
+export const APITypesKey = Object.keys(APITypes).filter((item) => item !== APITypes.common);
 
 export type APIType = keyof typeof APITypes;
 
 export interface APIConfig {
-  /** The API type. Like: user side or admin side, default is common. */
+  /** The API type. Like: user side or admin side. */
   type: APIType;
   /** The API path */
   path: string;
-  method: "get" | "post" | "delete" | "put" | "patch" | "head" | "options";
+  method: 'get' | 'post' | 'delete' | 'put' | 'patch' | 'head' | 'options';
   /** Request data validate scheme */
   schema?: z.ZodTypeAny;
   /** The API need auth? Default is false */
@@ -31,6 +29,15 @@ export interface APIConfig {
 
   /** custom headers for client */
   headers?: { [key: string]: any };
+  /**
+   * is params in url? for generate API sdk base documentation.
+   * default undefined,
+   * if `:`, will support `/api/:a/b/:c`,
+   * if `{}`, will support `/api/{a}/b/{c}`,
+   * and will replace with data with {a: 1, c: 2} to `/api/1/b/2`  */
+  paramsInUrl?: ':' | '{}';
+  /** Force the API is fetch data, for sometimes the backend API is all `post` method */
+  isGet?: boolean;
 }
 
 export interface ObjectLiteral {
@@ -94,15 +101,10 @@ export declare class DeleteResult {
 }
 
 export type RequireAtLeastOne<T> = {
-  [K in keyof T]-?: Required<Pick<T, K>> &
-    Partial<Pick<T, Exclude<keyof T, K>>>;
+  [K in keyof T]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<keyof T, K>>>;
 }[keyof T];
 
-export type RequireOnlyOne<T, Keys extends keyof T = keyof T> = Pick<
-  T,
-  Exclude<keyof T, Keys>
-> &
+export type RequireOnlyOne<T, Keys extends keyof T = keyof T> = Pick<T, Exclude<keyof T, Keys>> &
   {
-    [K in Keys]-?: Required<Pick<T, K>> &
-      Partial<Record<Exclude<Keys, K>, undefined>>;
+    [K in Keys]-?: Required<Pick<T, K>> & Partial<Record<Exclude<Keys, K>, undefined>>;
   }[Keys];

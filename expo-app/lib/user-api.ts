@@ -1,9 +1,10 @@
-import axios, { AxiosError } from "axios";
+import axios, { XiorError as AxiosError } from "xior";
 import { setHandler, setAxiosInstance, axiosHandler } from "fe-sdk";
 import Constants from "expo-constants";
 
 export * from "fe-sdk/lib/user-api";
 export * from "fe-sdk/lib/apiconf-refs";
+export * from "fe-sdk/lib/entity-refs";
 export * from "fe-sdk/lib/shared-refs";
 
 const host = Constants.expoGoConfig?.debuggerHost?.split(":")?.[0];

@@ -3,6 +3,7 @@ import { setHandler, setAxiosInstance, axiosHandler } from "fe-sdk";
 
 export * from "fe-sdk/lib/user-api";
 export * from "fe-sdk/lib/apiconf-refs";
+export * from "fe-sdk/lib/entity-refs";
 export * from "fe-sdk/lib/shared-refs";
 
 export const baseURL = process.env.API_URL || "";

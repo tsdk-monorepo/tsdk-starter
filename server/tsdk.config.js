@@ -11,7 +11,13 @@ module.exports = {
   removeFields: [],
   monorepoRoot: "../",
   dataHookLib: "SWR",
+  httpLib: 'xior',
   dependencies: {
-    axios: "1.6.2",
+    xior: "^0.6.3",
+    swr: "^2.3.2",
+    "@tanstack/react-query": "^5.66.9",
   },
+  scripts: {
+    "tsc:build": "rm -rf node_modules && tsc --project tsconfig.json",
+  }
 };

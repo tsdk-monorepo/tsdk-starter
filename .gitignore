@@ -131,3 +131,5 @@ dist
 
 dist*
 build*
+fe-sdk/*
+!fe-sdk/package.json
